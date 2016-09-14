@@ -28,6 +28,13 @@ type Notification struct {
 	Contents   map[string]string `json:"contents"`
 }
 
+type Filters struct {
+	Field         string      `json:"field"`
+	Key           string      `json:"key"`
+	Relation      string      `json:"relation"`
+	Value         string      `json:"value"`
+}
+
 // NotificationRequest represents a request to create a notification.
 type NotificationRequest struct {
 	AppID                  string            `json:"app_id"`
@@ -53,6 +60,7 @@ type NotificationRequest struct {
 	IncludeChromeWebRegIDs []string          `json:"include_chrome_web_reg_ids,omitempty"`
 	AppIDs                 []string          `json:"app_ids,omitempty"`
 	Tags                   interface{}       `json:"tags,omitempty"`
+	Filters                []Filters         `json:"filters,omitempty"`
 	IOSBadgeType           string            `json:"ios_badgeType,omitempty"`
 	IOSBadgeCount          int               `json:"ios_badgeCount,omitempty"`
 	IOSSound               string            `json:"ios_sound,omitempty"`
