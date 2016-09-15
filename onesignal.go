@@ -52,7 +52,7 @@ func (e *ErrorResponse) Error() string {
 }
 
 // NewClient returns a new OneSignal API client.
-func NewClient(httpClient *http.Client) *Client {
+func NewClient(httpClient *http.Client, appKey string) *Client {
 	if httpClient == nil {
 		httpClient = http.DefaultClient
 	}
@@ -65,6 +65,7 @@ func NewClient(httpClient *http.Client) *Client {
 	c := &Client{
 		BaseURL: baseURL,
 		Client:  httpClient,
+		AppKey:  appKey,
 	}
 
 	c.Apps = &AppsService{client: c}
