@@ -61,6 +61,7 @@ type NotificationRequest struct {
 	AppIDs                 []string          `json:"app_ids,omitempty"`
 	Tags                   interface{}       `json:"tags,omitempty"`
 	Filters                []Filters         `json:"filters,omitempty"`
+	IOSCategory            string            `json:"ios_category,omitempty"`
 	IOSBadgeType           string            `json:"ios_badgeType,omitempty"`
 	IOSBadgeCount          int               `json:"ios_badgeCount,omitempty"`
 	IOSSound               string            `json:"ios_sound,omitempty"`
